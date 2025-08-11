@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 export default function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false);
