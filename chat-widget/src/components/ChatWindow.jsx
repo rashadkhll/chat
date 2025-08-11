@@ -17,8 +17,6 @@ export default function ChatWidget() {
 
         setMessages((prev) => [...prev, userMessage]);
         setInputValue("");
-
-        // Bot cavabı 1 saniyə sonra gəlsin
         setTimeout(() => {
             const botMessage = {
                 id: Date.now() + 1,
@@ -65,7 +63,7 @@ export default function ChatWidget() {
                                 borderTopRightRadius: "8px",
                             }}
                         >
-                            Canlı Dəstək
+                           💬 Canlı Dəstək
                         </div>
 
                         {/* Mesajlar */}
