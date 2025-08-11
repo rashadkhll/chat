@@ -35,7 +35,6 @@
     // Chat pəncərəsi
     const chatWindow = document.createElement('div');
     chatWindow.style.position = 'fixed';
-    chatWindow.innerHTML = 'Hələki heçbir mesaj yoxdur';
     chatWindow.style.bottom = '90px';
     chatWindow.style.right = '24px';
     chatWindow.style.width = '360px';
