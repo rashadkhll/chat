@@ -31,7 +31,6 @@
     });
 
     document.body.appendChild(toggleBtn);
-
     // Chat pəncərəsi
     const chatWindow = document.createElement('div');
     chatWindow.style.position = 'fixed';
