@@ -1,0 +1,42 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Operator 1",
+            "role": "admin"
+        },
+        {
+            "id": 2,
+            "name": "Operator 2",
+            "role": "support"
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "from": "customer",
+            "text": "Salam",
+            "timestamp": "2025-08-11T08:00:00Z"
+        },
+        {
+            "id": 2,
+            "from": "operator",
+            "text": "Salam, necə kömək edə bilərəm?",
+            "timestamp": "2025-08-11T08:01:00Z"
+        }
+    ],
+    "translations": {
+        "az": {
+            "home_title": "Ana Səhifə",
+            "faq": "Tez-tez verilən suallar"
+        },
+        "en": {
+            "home_title": "Home Page",
+            "faq": "Frequently Asked Questions"
+        },
+        "ru": {
+            "home_title": "Главная страница",
+            "faq": "Часто задаваемые вопросы"
+        }
+    }
+}
