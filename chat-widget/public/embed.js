@@ -35,6 +35,7 @@
     // Chat pəncərəsi
     const chatWindow = document.createElement('div');
     chatWindow.style.position = 'fixed';
+    chatWindow.innerHTML = 'Hələki heçbir mesaj yoxdur';
     chatWindow.style.bottom = '90px';
     chatWindow.style.right = '24px';
     chatWindow.style.width = '360px';
@@ -128,16 +129,12 @@
             sendBtn.style.cursor = 'default';
         }
     });
-
     inputContainer.appendChild(input);
     inputContainer.appendChild(sendBtn);
-
     chatWindow.appendChild(header);
     chatWindow.appendChild(messages);
     chatWindow.appendChild(inputContainer);
-
     document.body.appendChild(chatWindow);
-
     // Toggle chat window on button click
     toggleBtn.addEventListener('click', () => {
         if (chatWindow.style.display === 'none') {
@@ -178,7 +175,6 @@
             addMessage('Təşəkkürlər! Mesajınız qeydə alındı.', false);
         }, 1000);
     });
-
     // Send on Enter
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !sendBtn.disabled) {
