@@ -22,7 +22,7 @@ export default function ChatWidget() {
         setTimeout(() => {
             const botMessage = {
                 id: Date.now() + 1,
-                text: "Salam! Sualınızı aldım, tezliklə cavab verəcəyəm.",
+                text: "Salam! sorğunuz qeydə alındı, tezliklə tərəfimizdən cavab veriləcək.",
                 sender: "bot",
             };
             setMessages((prev) => [...prev, botMessage]);
