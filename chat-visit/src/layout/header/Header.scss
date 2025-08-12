@@ -60,20 +60,30 @@
       }
     }
   }
+  &__hamburger {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .app__header {
-    flex-direction: column;
+    padding: 20px 0;
     align-items: center;
-    &__left,
     &__right {
-      width: 100%;
-      text-align: center;
+      display: none;
     }
-    &__right ul {
-      flex-direction: column;
-      gap: 20px;
+    &__hamburger {
+      display: block;
+      font-size: 1.5rem;
+      color: black;
+      margin-right: 20px;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 }

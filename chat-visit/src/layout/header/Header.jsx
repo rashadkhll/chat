@@ -1,6 +1,7 @@
 import "./Header.scss";
 import { Link } from "react-router";
 import { CiChat1 } from "react-icons/ci";
+import { FaBars } from "react-icons/fa6";
 const Header = () => {
   return (
     <div className="app__header">
@@ -34,6 +35,11 @@ const Header = () => {
             </Link>
           </li>
         </ul>
+      </div>
+      <div className="app__header__hamburger">
+        <Link to="/features">
+          <FaBars />
+        </Link>
       </div>
     </div>
   );
