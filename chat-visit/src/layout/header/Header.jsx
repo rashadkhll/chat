@@ -18,16 +18,20 @@ const Header = () => {
             <Link to="/features">Features</Link>
           </li>
           <li>
-            <Link to="/pricing">Pricing</Link>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <Link to="/resources">Resources</Link>
+            <Link to="/help-center">Help Center</Link>
           </li>
           <li>
-            <Link to="/login" id="loginBtn">Sign In</Link>
+            <Link to="/login" id="loginBtn">
+              Sign In
+            </Link>
           </li>
           <li>
-            <Link to="/register" id="registerBtn">Sign Up</Link>
+            <Link to="/register" id="registerBtn">
+              Sign Up
+            </Link>
           </li>
         </ul>
       </div>

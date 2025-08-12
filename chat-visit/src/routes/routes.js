@@ -7,6 +7,7 @@ import Login from "../pages/login";
 import Pricing from "../pages/pricing";
 import Register from "../pages/register";
 import Resources from "../pages/resources";
+import HelpCenter from "../pages/help";
 const routes = [
     {
         path: "/",
@@ -18,6 +19,7 @@ const routes = [
             { path: "login", element: <Login /> },
             { path: "register", element: <Register /> },
             { path: "pricing", element: <Pricing /> },
+            { path: "help-center", element: <HelpCenter /> },
             { path: "resources", element: <Resources /> },
         ],
     },
