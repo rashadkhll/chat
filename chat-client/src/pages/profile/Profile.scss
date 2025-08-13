@@ -1,0 +1,208 @@
+.client__profile {
+  padding: 4rem 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  &__intro {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #222;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 800px;
+      margin: 1rem auto 0;
+      line-height: 1.6;
+      color: #555;
+    }
+  }
+
+  &__image {
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 20px;
+    img {
+      max-width: 100%;
+      cursor: pointer;
+      object-fit: cover;
+      height: 100% !important;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__info {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    p {
+      margin: 0.8rem 0;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+      strong {
+        color: #007bff;
+        font-weight: 600;
+      }
+      .edit-btn {
+        background-color: #ffc107; /* Sarı renk */
+        border: none;
+        border-radius: 6px;
+        padding: 4px 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #e0a800; /* Daha koyu sarı */
+        }
+      }
+    }
+    &__buttons {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 20px;
+      button {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s linear;
+        &:hover {
+          color: white;
+          background-color: #007bff;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .client__profile {
+    &__intro h1 {
+      font-size: 2rem;
+    }
+
+    &__info {
+      padding: 1.5rem;
+    }
+  }
+}
+.dark-mode {
+  .client__profile {
+    padding: 4rem 0;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+    &__intro {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: white;
+      }
+
+      p {
+        font-size: 1rem;
+        max-width: 800px;
+        margin: 1rem auto 0;
+        line-height: 1.6;
+        color: white;
+      }
+    }
+
+    &__image {
+      text-align: center;
+      height: 100%;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      border-radius: 20px;
+      img {
+        max-width: 100%;
+        cursor: pointer;
+        object-fit: cover;
+        height: 100% !important;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &__info {
+      background: #1e1e1e;
+      transition: 0.3s linear;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      p {
+        margin: 0.8rem 0;
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.5rem;
+        strong {
+          color: white;
+          font-weight: 600;
+        }
+        .edit-btn {
+          background-color: #ffc107; /* Sarı renk */
+          border: none;
+          border-radius: 6px;
+          padding: 4px 8px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background-color: #e0a800; /* Daha koyu sarı */
+          }
+        }
+      }
+      &__buttons {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 20px;
+        button {
+          padding: 10px;
+          border-radius: 10px;
+          border: none;
+          cursor: pointer;
+          transition: 0.3s linear;
+          &:hover {
+            color: white;
+            background-color: #007bff;
+          }
+        }
+      }
+    }
+  }
+}

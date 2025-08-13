@@ -6,7 +6,6 @@ import { RiTeamFill } from "react-icons/ri";
 import { FaCode } from "react-icons/fa";
 import { FaBan } from "react-icons/fa";
 
-
 import "./Settings.scss"; // Assuming you have a Settings.scss for styling
 const Settings = () => {
   return (
@@ -56,6 +55,18 @@ const Settings = () => {
                 <FaCode />
               </div>
               <h3>Manage Your Widget</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+                sapiente delectus iste.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-12">
+            <div className="settings__card">
+              <div className="settings__card__icon">
+                <FaBan />
+              </div>
+              <h3>Manage Your Banned Words</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
                 sapiente delectus iste.
