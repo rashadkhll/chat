@@ -109,6 +109,13 @@ section {
 
 body {
   line-height: 1;
+  background: #2a7b9b;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 0.3) 0%,
+    rgba(87, 199, 134, 0.301) 50%,
+    #eddd534a 100%
+  );
 }
 
 ol,
@@ -136,3 +143,4 @@ table {
 * {
   font-family: "Poppins", sans-serif !important;
 }
+

@@ -5,7 +5,6 @@ import { FaBoltLightning } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { SiChatwoot } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
-import Slider from "react-slick";
 const Home = () => {
   return (
     <div className="home">
