@@ -144,28 +144,33 @@ table {
 }
 
 * {
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: #c1c1c1 #f5f5f5;
 }
 
 .dark-mode {
-  /* Chrome, Safari, Edge için */
   ::-webkit-scrollbar {
-    width: 12px; /* scrollbar genişliği */
+    width: 10px;
+    transition: 0.3s linear;
   }
 
   ::-webkit-scrollbar-track {
-    background: #000; /* track (arka plan) siyah */
+    background: #f5f5f5; /* Açık gri arka plan */
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #333; /* kaydırma kısmı koyu gri/siyah */
+    background-color: #c1c1c1; /* Hafif koyu gri */
     border-radius: 6px;
-    border: 2px solid #000; /* track ile uyum için */
+    border: 2px solid #f5f5f5; /* Arka planla uyum */
+    transition: 0.3s linear;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a8a8a8; /* Hover'da biraz daha koyu */
   }
 
   * {
-    scrollbar-width: thin; /* ince scrollbar */
-    scrollbar-color: #333 #000; /* thumb rengi, track rengi */
+    scrollbar-width: none;
+    scrollbar-color: #c1c1c1 #f5f5f5;
   }
 }

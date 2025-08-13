@@ -3,13 +3,13 @@ import Header from "../layout/header/Header";
 import Footer from "../layout/footer/Footer";
 const Layout = ({ children }) => {
   const location = useLocation();
-  const noHeaderFooterRoutes = ["/login","/register"];
+  const noHeaderFooterRoutes = ["/login"];
   const hideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
   return (
     <>
-      {!hideHeaderFooter && <Header />}
+      <Header />
       <Outlet />
-      {!hideHeaderFooter && <Footer />}
+      <Footer />
     </>
   );
 };
