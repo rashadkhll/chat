@@ -5,6 +5,8 @@ import { IoPersonSharp } from "react-icons/io5";
 import { IoPeopleSharp } from "react-icons/io5";
 import { IoIosSettings } from "react-icons/io";
 import { IoIosChatbubbles } from "react-icons/io";
+import { IoLibrary } from "react-icons/io5";
+import { TbReportSearch } from "react-icons/tb";
 
 import { Link } from "react-router-dom";
 import { FaMoon } from "react-icons/fa";
@@ -27,25 +29,43 @@ const Sidebar = () => {
       <div className="client__sidebar__middle">
         <ul>
           <li>
-            <Link to="">
+            <Link to="inbox">
               <FaMessage />
-              <span>Messages</span>
+              <span>My Inbox</span>
             </Link>
           </li>
           <li>
-            <Link to="">
+            <Link to="conversations">
+              <FaMessage />
+              <span>Conversations</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="contacts">
               <IoPersonSharp />
               <span>Contacts</span>
             </Link>
           </li>
           <li>
-            <Link to="">
+            <Link to="groups">
               <IoPeopleSharp />
               <span>Groups</span>
             </Link>
           </li>
           <li>
-            <Link to="">
+            <Link to="help-center">
+              <IoLibrary />
+              <span>Help Center</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="reports">
+              <TbReportSearch />
+              <span>Reports</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="settings">
               <IoIosSettings />
               <span>Settings</span>
             </Link>
