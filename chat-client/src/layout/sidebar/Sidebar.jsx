@@ -14,14 +14,6 @@ const Sidebar = () => {
   const path = window.location.pathname.split("/")[2];
   const [activePath, setActivePath] = useState(path);
   const [darkMode, setDarkMode] = useState(false);
-  const changeActiveTab = (path) => {
-    links.forEach((link) => {
-      if (link.to === path) {
-        setActivePath(link.to);
-      }
-    });
-    return false;
-  };
   const links = [
     { to: "inbox", icon: <FaMessage />, label: "My Inbox" },
     { to: "conversations", icon: <IoIosChatbubbles />, label: "Conversations" },

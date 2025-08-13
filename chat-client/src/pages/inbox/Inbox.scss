@@ -124,7 +124,7 @@
         flex-direction: column;
         gap: 5px;
         border-radius: 5px;
-        max-width: 60%;
+        max-width: 50%;
         &__sent {
           background-color: #e0f7fa;
           align-self: flex-end;
@@ -132,6 +132,13 @@
         &__received {
           background-color: #fff3e0;
           align-self: flex-start;
+          img{
+            margin-bottom: 10px;
+            width: 100%;
+          }
+          p{
+            margin-bottom: 10px;
+          }
         }
       }
       &__form {

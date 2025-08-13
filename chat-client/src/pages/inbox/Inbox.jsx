@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { BsChatSquare } from "react-icons/bs";
@@ -289,158 +289,21 @@ const Inbox = () => {
               10:00 AM
             </span>
           </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
+          <div className="client__inbox__message__body__message client__inbox__message__body__message__received">
             <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
+              <img
+                src="https://www.in2code.de/fileadmin/_processed_/0/b/csm_code_javascript_49d002a67e.webp"
+                alt=""
+              />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+                tenetur!
+              </p>
             </div>
             <span className="client__inbox__message__body__message__time">
-              10:00 AM
+              10:01 AM
             </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
-          <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
-            <div className="client__inbox__message__body__message__content">
-              <p>Hello, how are you?</p>
-            </div>
-            <span className="client__inbox__message__body__message__time">
-              10:00 AM
-            </span>
-          </div>{" "}
+          </div>
           <div className="client__inbox__message__body__message client__inbox__message__body__message__sent">
             <div className="client__inbox__message__body__message__content">
               <p>Hello, how are you?</p>
