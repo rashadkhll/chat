@@ -11,12 +11,13 @@ import { Link } from "react-router-dom";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 const Sidebar = () => {
-  const activePath = window.location.pathname.split("/")[2];
+  const path = window.location.pathname.split("/")[2];
+  const [activePath, setActivePath] = useState(path);
   const [darkMode, setDarkMode] = useState(false);
-  const isActive = (path) => {
+  const changeActiveTab = (path) => {
     links.forEach((link) => {
       if (link.to === path) {
-        return true;
+        setActivePath(link.to);
       }
     });
     return false;
@@ -59,7 +60,7 @@ const Sidebar = () => {
             <li
               key={link.to}
               onClick={handleActiveTab}
-              className={`${isActive(activePath) ? "active" : ""}`}
+              className={activePath === link.to ? "active" : ""}
             >
               <Link to={link.to}>
                 {link.icon}
