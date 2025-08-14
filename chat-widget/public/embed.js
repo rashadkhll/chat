@@ -1,7 +1,5 @@
 (function () {
-  const messagesArr = localStorage.getItem("messages")
-    ? localStorage.getItem("messages")
-    : [];
+  const messagesArr = JSON.parse(localStorage.getItem("messages")) || [];
   const toggleBtn = document.createElement("button");
   toggleBtn.setAttribute("aria-label", "Toggle chat");
   toggleBtn.style.position = "fixed";
@@ -176,7 +174,7 @@
       msgText: msgText,
       isUser: true,
     });
-    localStorage.setItem("messages", messagesArr.toString());
+    localStorage.setItem("messages", JSON.stringify(messagesArr));
     console.log(messagesArr);
     setTimeout(() => {
       addMessage("Təşəkkürlər! Mesajınız qeydə alındı.", false);
