@@ -2,10 +2,11 @@
   const scriptTag = document.currentScript;
   const urlParams = new URLSearchParams(scriptTag.src.split("?")[1]);
   const token = urlParams.get("token");
+  const BASE_URL = urlParams.get("baseUrl");
 
   if (!token) return;
 
-  fetch(`http://localhost:4000/defaultSettings.json?token=${token}`)
+  fetch(`${BASE_URL}/defaultSettings.json?token=${token}`)
     .then((res) => res.json())
     .then((data) => {
       const settings = data[token];
@@ -44,8 +45,12 @@
         justifyContent: "center",
         transition: "background-color 0.3s ease",
         zIndex: "9999",
-        ...(ToggleBtnPosition.includes("bottom") ? { bottom: "24px" } : { top: "24px" }),
-        ...(ToggleBtnPosition.includes("left") ? { left: "24px" } : { right: "24px" }),
+        ...(ToggleBtnPosition.includes("bottom")
+          ? { bottom: "24px" }
+          : { top: "24px" }),
+        ...(ToggleBtnPosition.includes("left")
+          ? { left: "24px" }
+          : { right: "24px" }),
       });
       toggleBtn.innerHTML = widgetIcon
         ? `<img src="${widgetIcon}" alt="icon" style="width:28px;height:28px;border-radius:50%"/>`
@@ -66,8 +71,12 @@
         overflow: "hidden",
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
         zIndex: "9999",
-        ...(ToggleBtnPosition.includes("bottom") ? { bottom: "90px" } : { top: "90px" }),
-        ...(ToggleBtnPosition.includes("left") ? { left: "24px" } : { right: "24px" }),
+        ...(ToggleBtnPosition.includes("bottom")
+          ? { bottom: "90px" }
+          : { top: "90px" }),
+        ...(ToggleBtnPosition.includes("left")
+          ? { left: "24px" }
+          : { right: "24px" }),
       });
 
       // === HEADER ===
@@ -97,9 +106,16 @@
       }
 
       // Agent info
-      const agentInfo = createEl("div", { display: "flex", flexDirection: "column" });
+      const agentInfo = createEl("div", {
+        display: "flex",
+        flexDirection: "column",
+      });
 
-      const nameRow = createEl("div", { display: "flex", alignItems: "center", gap: "6px" });
+      const nameRow = createEl("div", {
+        display: "flex",
+        alignItems: "center",
+        gap: "6px",
+      });
       const nameText = createEl("span", { fontWeight: "700" });
       nameText.textContent = agent.name || widgetTitle;
 
