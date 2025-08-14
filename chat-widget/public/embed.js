@@ -172,7 +172,10 @@
     sendBtn.style.cursor = "default";
     console.log(msgText);
     console.log(messagesArr);
-    messagesArr.push([...messagesArr], msgText);
+    messagesArr.push({
+      msgText: msgText,
+      isUser: true,
+    });
     localStorage.setItem("messages", messagesArr.toString());
     console.log(messagesArr);
     setTimeout(() => {
