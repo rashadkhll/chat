@@ -1,13 +1,18 @@
 {
   "token1": {
-    "online": true,
-    "themeColor": "green",
-    "widgetTitle": "Baku Electronics",
-    "widgetIcon": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Irshad_logo_%283%29.png",
-    "inputPlaceholder": "Mesaj yazın",
+    "online": false,
+    "themeColor": "blue",
+    "widgetTitle": "IRshad",
+    "widgetIcon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsSJQuFcI_MeKRGtutePrmyf3E2dMqSt_WrA&s",
+    "inputPlaceholder": "lorem",
     "buttonText": "Göndər",
     "status": true,
     "ToggleBtnPosition": "bottom right",
+    "agent":{
+      "name":"Rashad Xalilov",
+      "profession":"Product Expert",
+      "online":true
+    },
     "messages": [
       [
         [

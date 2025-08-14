@@ -3,6 +3,8 @@
   const urlParams = new URLSearchParams(scriptTag.src.split("?")[1]);
   const token = urlParams.get("token");
 
+  if (!token) return;
+
   fetch(`http://localhost:4000/defaultSettings.json?token=${token}`)
     .then((res) => res.json())
     .then((data) => {
@@ -10,133 +12,165 @@
       if (!settings || !settings.status) return;
 
       const {
-        themeColor = "green",
+        themeColor = "#007bff",
         widgetTitle = "Live Chat",
         widgetIcon = "",
-        inputPlaceholder = "Mesaj göndərin",
+        inputPlaceholder = "Mesaj yazın...",
         buttonText = "Göndər",
-        ToggleBtnPosition = "bottom left",
-        online = true,
+        ToggleBtnPosition = "bottom right",
+        agent = {},
       } = settings;
 
-      // Toggle button
-      const toggleBtn = document.createElement("button");
-      toggleBtn.setAttribute("aria-label", "Toggle chat");
-      toggleBtn.style.position = "fixed";
-      toggleBtn.style.width = "56px";
-      toggleBtn.style.height = "56px";
-      toggleBtn.style.borderRadius = "50%";
-      toggleBtn.style.backgroundColor = themeColor;
-      toggleBtn.style.border = "none";
-      toggleBtn.style.boxShadow = `0 4px 12px ${themeColor}55`;
-      toggleBtn.style.cursor = "pointer";
-      toggleBtn.style.display = "flex";
-      toggleBtn.style.alignItems = "center";
-      toggleBtn.style.justifyContent = "center";
-      toggleBtn.style.transition = "background-color 0.3s ease";
-      toggleBtn.style.zIndex = "9999";
-
-      if (ToggleBtnPosition === "bottom left") {
-        toggleBtn.style.bottom = "24px";
-        toggleBtn.style.left = "24px";
-      } else {
-        toggleBtn.style.bottom = "24px";
-        toggleBtn.style.right = "24px";
+      // === CREATE ELEMENT HELPER ===
+      function createEl(tag, styles = {}, innerHTML = "") {
+        const el = document.createElement(tag);
+        Object.assign(el.style, styles);
+        if (innerHTML) el.innerHTML = innerHTML;
+        return el;
       }
 
+      // === TOGGLE BUTTON ===
+      const toggleBtn = createEl("button", {
+        position: "fixed",
+        width: "56px",
+        height: "56px",
+        borderRadius: "50%",
+        backgroundColor: themeColor,
+        border: "none",
+        boxShadow: `0 4px 12px ${themeColor}55`,
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        transition: "background-color 0.3s ease",
+        zIndex: "9999",
+        ...(ToggleBtnPosition.includes("bottom") ? { bottom: "24px" } : { top: "24px" }),
+        ...(ToggleBtnPosition.includes("left") ? { left: "24px" } : { right: "24px" }),
+      });
       toggleBtn.innerHTML = widgetIcon
         ? `<img src="${widgetIcon}" alt="icon" style="width:28px;height:28px;border-radius:50%"/>`
         : `<svg xmlns="http://www.w3.org/2000/svg" fill="white" width="28" height="28" viewBox="0 0 24 24">
             <path d="M2 3h20v14H6l-4 4V3z" />
           </svg>`;
 
-      // Chat window
-      const chatWindow = document.createElement("div");
-      chatWindow.style.position = "fixed";
-      chatWindow.style.width = "360px";
-      chatWindow.style.height = "480px";
-      chatWindow.style.backgroundColor = "white";
-      chatWindow.style.borderRadius = "16px";
-      chatWindow.style.boxShadow = `0 16px 48px ${themeColor}55`;
-      chatWindow.style.display = "none";
-      chatWindow.style.flexDirection = "column";
-      chatWindow.style.overflow = "hidden";
-      chatWindow.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-      chatWindow.style.zIndex = "9999";
+      // === CHAT WINDOW ===
+      const chatWindow = createEl("div", {
+        position: "fixed",
+        width: "360px",
+        height: "480px",
+        backgroundColor: "white",
+        borderRadius: "16px",
+        boxShadow: `0 16px 48px ${themeColor}55`,
+        display: "none",
+        flexDirection: "column",
+        overflow: "hidden",
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        zIndex: "9999",
+        ...(ToggleBtnPosition.includes("bottom") ? { bottom: "90px" } : { top: "90px" }),
+        ...(ToggleBtnPosition.includes("left") ? { left: "24px" } : { right: "24px" }),
+      });
 
-      if (ToggleBtnPosition === "bottom left") {
-        chatWindow.style.bottom = "90px";
-        chatWindow.style.left = "24px";
-      } else {
-        chatWindow.style.bottom = "90px";
-        chatWindow.style.right = "24px";
-      }
+      // === HEADER ===
+      const header = createEl("div", {
+        display: "flex",
+        alignItems: "center",
+        gap: "12px",
+        backgroundColor: themeColor,
+        color: "white",
+        fontWeight: "600",
+        padding: "16px 24px",
+        fontSize: "18px",
+        userSelect: "none",
+        flexShrink: "0",
+      });
 
-      // Header with icon & title
-      const header = document.createElement("div");
-      header.style.display = "flex";
-      header.style.alignItems = "center";
-      header.style.gap = "12px";
-      header.style.backgroundColor = themeColor;
-      header.style.color = "white";
-      header.style.fontWeight = "600";
-      header.style.padding = "16px 24px";
-      header.style.fontSize = "18px";
-      header.style.userSelect = "none";
-
+      // Icon
       if (widgetIcon) {
-        const iconImg = document.createElement("img");
+        const iconImg = createEl("img", {
+          width: "40px",
+          height: "40px",
+          borderRadius: "50%",
+          objectFit: "cover",
+        });
         iconImg.src = widgetIcon;
-        iconImg.alt = "icon";
-        iconImg.style.width = "28px";
-        iconImg.style.height = "28px";
-        iconImg.style.borderRadius = "50%";
         header.appendChild(iconImg);
       }
 
-      const titleText = document.createElement("span");
-      titleText.textContent = widgetTitle;
-      header.appendChild(titleText);
+      // Agent info
+      const agentInfo = createEl("div", { display: "flex", flexDirection: "column" });
 
-      // Messages area
-      const messages = document.createElement("div");
-      messages.style.flex = "1";
-      messages.style.padding = "16px";
-      messages.style.backgroundColor = "#f5f8ff";
-      messages.style.overflowY = "auto";
-      messages.style.display = "flex";
-      messages.style.flexDirection = "column";
-      messages.style.gap = "12px";
+      const nameRow = createEl("div", { display: "flex", alignItems: "center", gap: "6px" });
+      const nameText = createEl("span", { fontWeight: "700" });
+      nameText.textContent = agent.name || widgetTitle;
 
-      // Input container
-      const inputContainer = document.createElement("div");
-      inputContainer.style.padding = "12px 16px";
-      inputContainer.style.borderTop = "1px solid #ddd";
-      inputContainer.style.display = "flex";
-      inputContainer.style.alignItems = "center";
+      if (agent.online) {
+        const statusDot = createEl("span", {
+          display: "inline-block",
+          width: "8px",
+          height: "8px",
+          borderRadius: "50%",
+          backgroundColor: "limegreen",
+          boxShadow: "0 0 4px rgba(0,0,0,0.3)",
+        });
+        nameRow.appendChild(statusDot);
+      }
+      nameRow.appendChild(nameText);
 
-      const input = document.createElement("input");
+      agentInfo.appendChild(nameRow);
+      if (agent.profession) {
+        const professionText = createEl("span", {
+          fontSize: "13px",
+          fontWeight: "400",
+          opacity: "0.9",
+        });
+        professionText.textContent = agent.profession;
+        agentInfo.appendChild(professionText);
+      }
+      header.appendChild(agentInfo);
+
+      // === MESSAGES AREA ===
+      const messages = createEl("div", {
+        flex: "1",
+        padding: "16px",
+        backgroundColor: "#f5f8ff",
+        overflowY: "auto",
+        display: "flex",
+        flexDirection: "column",
+        gap: "12px",
+      });
+
+      // === INPUT AREA ===
+      const inputContainer = createEl("div", {
+        padding: "12px 16px",
+        borderTop: "1px solid #ddd",
+        display: "flex",
+        alignItems: "center",
+      });
+
+      const input = createEl("input", {
+        flex: "1",
+        border: "1.5px solid #ddd",
+        borderRadius: "24px",
+        padding: "12px 20px",
+        fontSize: "14px",
+        outline: "none",
+        marginRight: "12px",
+      });
       input.type = "text";
       input.placeholder = inputPlaceholder;
-      input.style.flex = "1";
-      input.style.border = "1.5px solid #ddd";
-      input.style.borderRadius = "24px";
-      input.style.padding = "12px 20px";
-      input.style.fontSize = "14px";
-      input.style.outline = "none";
-      input.style.marginRight = "12px";
 
-      const sendBtn = document.createElement("button");
+      const sendBtn = createEl("button", {
+        backgroundColor: themeColor,
+        border: "none",
+        color: "white",
+        padding: "10px 20px",
+        fontWeight: "600",
+        borderRadius: "24px",
+        cursor: "default",
+        opacity: "0.5",
+      });
       sendBtn.textContent = buttonText;
       sendBtn.disabled = true;
-      sendBtn.style.backgroundColor = themeColor;
-      sendBtn.style.border = "none";
-      sendBtn.style.color = "white";
-      sendBtn.style.padding = "10px 20px";
-      sendBtn.style.fontWeight = "600";
-      sendBtn.style.borderRadius = "24px";
-      sendBtn.style.cursor = "default";
-      sendBtn.style.opacity = "0.5";
 
       input.addEventListener("input", () => {
         const hasValue = input.value.trim().length > 0;
@@ -158,15 +192,16 @@
       });
 
       function addMessage(text, isUser) {
-        const msg = document.createElement("div");
+        const msg = createEl("div", {
+          padding: "10px 16px",
+          borderRadius: "20px",
+          maxWidth: "75%",
+          wordBreak: "break-word",
+          alignSelf: isUser ? "flex-end" : "flex-start",
+          backgroundColor: isUser ? themeColor : "#e5e5ea",
+          color: isUser ? "white" : "black",
+        });
         msg.textContent = text;
-        msg.style.padding = "10px 16px";
-        msg.style.borderRadius = "20px";
-        msg.style.maxWidth = "75%";
-        msg.style.wordBreak = "break-word";
-        msg.style.alignSelf = isUser ? "flex-end" : "flex-start";
-        msg.style.backgroundColor = isUser ? themeColor : "#e5e5ea";
-        msg.style.color = isUser ? "white" : "black";
         messages.appendChild(msg);
         messages.scrollTop = messages.scrollHeight;
       }
@@ -177,6 +212,7 @@
         if (!isOpen) input.focus();
       });
 
+      // === Assemble ===
       inputContainer.appendChild(input);
       inputContainer.appendChild(sendBtn);
       chatWindow.appendChild(header);
