@@ -1,13 +1,18 @@
 {
   "token1": {
     "online": false,
-    "themeColor": "orange",
-    "widgetTitle": "Lorem",
-    "widgetIcon": "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
-    "inputPlaceholder": "Mesaj göndərin",
+    "themeColor": "green",
+    "widgetTitle": "IRshad",
+    "widgetIcon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsSJQuFcI_MeKRGtutePrmyf3E2dMqSt_WrA&s",
+    "inputPlaceholder": "lorem",
     "buttonText": "Göndər",
     "status": true,
-    "ToggleBtnPosition": "bottom left",
+    "ToggleBtnPosition": "bottom right",
+    "agent":{
+      "name":"Rashad Xalilov",
+      "profession":"Product Expert",
+      "online":true
+    },
     "messages": [
       [
         [
@@ -56,13 +61,64 @@
     ]
   },
   "token2": {
-    "online": true,
-    "themeColor": "#000",
-    "widgetTitle": "Ipsum",
-    "widgetIcon": "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
-    "inputPlaceholder": "Send Message",
-    "buttonText": "Send",
+    "online": false,
+    "themeColor": "orange",
+    "widgetTitle": "Rashad 2 ",
+    "widgetIcon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsSJQuFcI_MeKRGtutePrmyf3E2dMqSt_WrA&s",
+    "inputPlaceholder": "lorem",
+    "buttonText": "tulla",
     "status": true,
-    "ToggleBtnPosition": "top left"
+    "ToggleBtnPosition": "bottom right",
+    "agent":{
+      "name":"Rashad Xalilov",
+      "profession":"Product Expert",
+      "online":true
+    },
+    "messages": [
+      [
+        [
+          {
+            "text": "salam",
+            "date": "12.02.25 12:05 PM"
+          },
+          {
+            "text": "necəsiniz",
+            "date": "12.02.25 12:06 PM"
+          }
+        ],
+        [
+          {
+            "text": "salam",
+            "date": "12.02.25 12:05 PM"
+          },
+          {
+            "text": "yaxşı",
+            "date": "12.02.25 12:06 PM"
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "text": "salam",
+            "date": "12.02.25 12:05 PM"
+          },
+          {
+            "text": "necəsiniz",
+            "date": "12.02.25 12:06 PM"
+          }
+        ],
+        [
+          {
+            "text": "salam",
+            "date": "12.02.25 12:05 PM"
+          },
+          {
+            "text": "yaxşı",
+            "date": "12.02.25 12:06 PM"
+          }
+        ]
+      ]
+    ]
   }
 }
