@@ -20,6 +20,18 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="http://localhost:4000/embed.js?token=token1"></script>
+    <script>
+      (function (d, t) {
+        const BASE_URL = "https://live-chat-wine.vercel.app";
+        const websiteToken = `token2`;
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src = `${BASE_URL}/embed.js?token=${websiteToken}&baseUrl=${encodeURIComponent(
+          BASE_URL
+        )}`;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+      })(document, "script");
+    </script>
   </body>
 </html>

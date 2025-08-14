@@ -1,7 +1,7 @@
 {
   "token1": {
     "online": false,
-    "themeColor": "red",
+    "themeColor": "blue",
     "widgetTitle": "Lorem",
     "widgetIcon": "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
     "inputPlaceholder": "Mesaj göndərin",
