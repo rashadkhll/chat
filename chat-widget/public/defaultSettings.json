@@ -1,0 +1,68 @@
+{
+  "token1": {
+    "online": true,
+    "themeColor": "#fff",
+    "widgetTitle": "Lorem",
+    "widgetIcon": "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+    "inputPlaceholder": "Mesaj göndərin",
+    "buttonText": "Göndər",
+    "status": true,
+    "ToggleBtnPosition": "bottom left",
+    "messages": [
+      [
+        [
+          {
+            "text": "salam",
+            "date": "12.02.25 12:05 PM"
+          },
+          {
+            "text": "necəsiniz",
+            "date": "12.02.25 12:06 PM"
+          }
+        ],
+        [
+          {
+            "text": "salam",
+            "date": "12.02.25 12:05 PM"
+          },
+          {
+            "text": "yaxşı",
+            "date": "12.02.25 12:06 PM"
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "text": "salam",
+            "date": "12.02.25 12:05 PM"
+          },
+          {
+            "text": "necəsiniz",
+            "date": "12.02.25 12:06 PM"
+          }
+        ],
+        [
+          {
+            "text": "salam",
+            "date": "12.02.25 12:05 PM"
+          },
+          {
+            "text": "yaxşı",
+            "date": "12.02.25 12:06 PM"
+          }
+        ]
+      ]
+    ]
+  },
+  "token2": {
+    "online": true,
+    "themeColor": "#000",
+    "widgetTitle": "Ipsum",
+    "widgetIcon": "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+    "inputPlaceholder": "Send Message",
+    "buttonText": "Send",
+    "status": true,
+    "ToggleBtnPosition": "top left"
+  }
+}

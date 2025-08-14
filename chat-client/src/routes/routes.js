@@ -5,6 +5,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Groups from "../pages/groups/Groups";
 import HelpCenter from "../pages/help/HelpCenter";
 import Inbox from "../pages/inbox/Inbox";
+import ManageWidget from "../pages/ManageWidget";
 import Profile from "../pages/profile/Profile";
 import Reports from "../pages/reports/Reports";
 import Settings from "../pages/settings/Settings";
@@ -24,6 +25,7 @@ const routes = [
       { path: "help-center", element: <HelpCenter /> },
       { path: "reports", element: <Reports /> },
       { path: "profile", element: <Profile /> },
+      { path: "settings/manage-widget", element: <ManageWidget /> },
     ],
   },
 ];

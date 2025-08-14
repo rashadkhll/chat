@@ -1,0 +1,135 @@
+:root {
+  --bg-color: #f7f9fc;
+  --card-bg: #ffffff;
+  --text-color: #2d2d2d;
+  --label-color: #555;
+  --input-bg: #fff;
+  --border-color: #d6dbe6;
+  --primary-color: #4a90e2;
+  --primary-hover: #3a78c0;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #f5f5f5;
+  --label-color: #ccc;
+  --input-bg: #2a2a2a;
+  --border-color: #444;
+  --primary-color: #4a90e2;
+  --primary-hover: #3a78c0;
+}
+
+body {
+  background-color: var(--bg-color);
+  transition: background 0.3s ease;
+}
+
+.manage__widget {
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  height: 100vh;
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--label-color);
+      margin-bottom: 0.4rem;
+      transition: color 0.3s ease;
+    }
+
+    input {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      background: var(--input-bg);
+      color: var(--text-color);
+      transition: all 0.25s ease;
+
+      &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 6px rgba(74, 144, 226, 0.4);
+      }
+
+      &[type="color"] {
+        padding: 0;
+        height: 45px;
+        width: 70px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      &[type="file"] {
+        border: none;
+        background: none;
+        padding: 0;
+
+        &::-webkit-file-upload-button {
+          background: var(--primary-color);
+          color: #fff;
+          border: none;
+          padding: 0.6rem 1rem;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background: var(--primary-hover);
+          }
+        }
+      }
+    }
+
+    button {
+      padding: 0.8rem 1.2rem;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s ease, transform 0.1s ease;
+
+      &:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    padding: 1.2rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}

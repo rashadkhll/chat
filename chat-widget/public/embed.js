@@ -1,4 +1,14 @@
 (function () {
+  const urlObj = new URL(window.location.pathname);
+  console.log(urlObj)
+  const urlParams = new URLSearchParams(urlObj.search);
+  console.log(urlParams)
+  const token = urlParams.get("token");
+  const overrideCSS = () => {
+    fetch("https://live-chat-wine.vercel.app/defaultSettings.json")
+      .then((res) => res.json())
+      .then((data) => {});
+  };
   const messagesArr = JSON.parse(localStorage.getItem("messages")) || [];
   const toggleBtn = document.createElement("button");
   toggleBtn.setAttribute("aria-label", "Toggle chat");
@@ -135,7 +145,6 @@
   chatWindow.appendChild(messages);
   chatWindow.appendChild(inputContainer);
   document.body.appendChild(chatWindow);
-  // Toggle chat window on button click
   toggleBtn.addEventListener("click", () => {
     if (chatWindow.style.display === "none") {
       chatWindow.style.display = "flex";
@@ -175,9 +184,9 @@
       isUser: true,
     });
     localStorage.setItem("messages", JSON.stringify(messagesArr));
-    console.log(messagesArr);
     setTimeout(() => {
       addMessage("Təşəkkürlər! Mesajınız qeydə alındı.", false);
+      localStorage.setItem("messages", JSON.stringify(messagesArr));
     }, 1000);
   });
   // Send on Enter
