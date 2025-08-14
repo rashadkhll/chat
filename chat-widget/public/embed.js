@@ -173,8 +173,8 @@
     console.log(msgText);
     console.log(messagesArr);
     messagesArr.push([...messagesArr], msgText);
-    localStorage.setItem("messages");
-    console.log(messagesArr)
+    localStorage.setItem("messages", messagesArr.toString());
+    console.log(messagesArr);
     setTimeout(() => {
       addMessage("Təşəkkürlər! Mesajınız qeydə alındı.", false);
     }, 1000);
