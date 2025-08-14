@@ -1,13 +1,13 @@
 {
   "token1": {
-    "online": false,
-    "themeColor": "red",
-    "widgetTitle": "Lorem",
-    "widgetIcon": "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
-    "inputPlaceholder": "Mesaj göndərin",
+    "online": true,
+    "themeColor": "green",
+    "widgetTitle": "Baku Electronics",
+    "widgetIcon": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Irshad_logo_%283%29.png",
+    "inputPlaceholder": "Mesaj yazın",
     "buttonText": "Göndər",
     "status": true,
-    "ToggleBtnPosition": "bottom left",
+    "ToggleBtnPosition": "bottom right",
     "messages": [
       [
         [
