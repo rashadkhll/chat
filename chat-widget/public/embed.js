@@ -167,7 +167,7 @@
         sendBtn.disabled = true;
         sendBtn.style.opacity = '0.5';
         sendBtn.style.cursor = 'default';
-
+        console.log(msgText)
         // Simulate bot reply with delay
         setTimeout(() => {
             addMessage('Təşəkkürlər! Mesajınız qeydə alındı.', false);
