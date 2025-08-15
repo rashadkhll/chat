@@ -1,15 +1,15 @@
 {
   "token1": {
-    "online": false,
-    "themeColor": "red",
+    "online": true,
+    "themeColor": "green",
     "widgetTitle": "IRshad",
     "widgetIcon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsSJQuFcI_MeKRGtutePrmyf3E2dMqSt_WrA&s",
-    "inputPlaceholder": "lorem",
-    "buttonText": "Göndər",
+    "inputPlaceholder": "Mesaj göndərin",
+    "buttonText": "Send",
     "status": true,
     "ToggleBtnPosition": "bottom right",
     "agent":{
-      "name":"Rashad Xalilov",
+      "name":"Lorem Ipsum",
       "profession":"Product Expert",
       "online":true
     },
