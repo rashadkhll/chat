@@ -3,7 +3,6 @@
   const urlParams = new URLSearchParams(scriptTag.src.split("?")[1]);
   const token = urlParams.get("token");
   const BASE_URL = urlParams.get("baseUrl");
-
   if (!token) return;
 
   fetch(`${BASE_URL}/defaultSettings.json?token=${token}`)
