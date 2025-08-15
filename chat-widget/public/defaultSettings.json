@@ -1,7 +1,7 @@
 {
   "token1": {
     "online": false,
-    "themeColor": "green",
+    "themeColor": "red",
     "widgetTitle": "IRshad",
     "widgetIcon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsSJQuFcI_MeKRGtutePrmyf3E2dMqSt_WrA&s",
     "inputPlaceholder": "lorem",
